@@ -9,7 +9,6 @@ const forecast = (latitude, longitude, callback) => {
         } else if (body.error) {
             callback('Unvalid longitude and latitude parameters.', undefined)
         } else {
-            console.log(body)
             callback(undefined, (
                 'Forecast: ' + body.current.weather_descriptions[0] +
                 '\nTemperature: ' + body.current.temperature + ' °C' +
