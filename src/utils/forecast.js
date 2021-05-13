@@ -9,7 +9,14 @@ const forecast = (latitude, longitude, callback) => {
         } else if (body.error) {
             callback('Unvalid longitude and latitude parameters.', undefined)
         } else {
-            callback(undefined, 'Local time: ' + body.current.observation_time + '\nTimezone: ' + body.location.utc_offset + '\nTemperature: ' + body.current.temperature + ' celsius degress\nFeels like:' + body.current.feelslike + ' celsius degress\nHumidity: ' + body.current.humidity + '%\nPrecipitation: ' + body.current.precip + 'mm')
+            callback(undefined, (
+                'Local time: ' + body.current.observation_time +
+                '\nTimezone: ' + body.location.utc_offset +
+                '\nTemperature: ' + body.current.temperature + ' °C' +
+                '\nFeels like: ' + body.current.feelslike + ' °C' +
+                '\nHumidity: ' + body.current.humidity + '%' +
+                '\nPrecipitation: ' + body.current.precip + ' mm')
+            )
         }
     })
 }
